@@ -1,9 +1,31 @@
 A team blog based on [Flask](http://flask.pocoo.org/)
 ===
 
-This project isn't supported at the moment, please see a newer [pypress-tornado](https://github.com/laoqiu/pypress-tornado)
+This project is forked form [pypress](https://github.com/laoqiu/pypress) by laoqiu
 
-Thanks for flask_website and newsmeme at [http://flask.pocoo.org/community/poweredby/]
+Purpose of this fork is to make this project relive
+
+#Version road map
+
+## Version 0.1.0
+
+Use blueprint instead of older module for Flask 0.10.* and newer
+
+Fixed bug of Upload
+
+## Version 0.1.1
+
+Convert to to Sina Appliaction Engine
+
+1. Storage - OS
+2. Mail - SAE mail
+3. MySQL configure
+
+# Version 0.1.*
+
+Please post issue or suggestion on github to route the development
+
+===
 
 ##Install
 

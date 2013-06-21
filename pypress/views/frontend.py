@@ -8,20 +8,21 @@
 
 import datetime
 import os
+import json
 
-from flask import Module, Response, request, flash, jsonify, g, current_app,\
+from flask import Blueprint, Response, request, flash, jsonify, g, current_app,\
     abort, redirect, url_for, session, send_file, send_from_directory
 
-from flaskext.babel import gettext as _
+from flask.ext.babel import gettext as _
 
-from pypress.helpers import render_template, cached
-from pypress.permissions import auth, admin 
-from pypress.extensions import db, photos
+from idetail.helpers import render_template, cached
+from idetail.permissions import auth, admin 
+from idetail.extensions import db, photos
 
-from pypress.models import User, Post, Comment, Tag
-from pypress.forms import CommentForm, TemplateForm, TwitterForm
+from idetail.models import User, Post, Comment, Tag
+from idetail.forms import CommentForm, TemplateForm, TwitterForm
 
-frontend = Module(__name__)
+frontend = Blueprint('frontend', __name__ )
 
 @frontend.route("/")
 @frontend.route("/page/<int:page>/")

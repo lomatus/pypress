@@ -7,6 +7,9 @@
 
     :license: BSD, see LICENSE for more details.
 """
+__author__ "Laoqiu,lomatus"
+__version__ "0.1.0"
+
 import os
 import logging
 import datetime
@@ -16,19 +19,19 @@ from werkzeug import parse_date
 
 from flask import Flask, g, session, request, flash, redirect, jsonify, url_for
 
-from flaskext.babel import Babel, gettext as _
-from flaskext.themes import setup_themes
-from flaskext.principal import Principal, RoleNeed, UserNeed, identity_loaded
-from flaskext.uploads import configure_uploads
+from flask.ext.babel import Babel, gettext as _
+from flask.ext.themes import setup_themes
+from flask.ext.principal import Principal, RoleNeed, UserNeed, identity_loaded
+from flask.ext.uploads import configure_uploads
 
-from pypress import views, helpers
-from pypress.models import User, Post, Tag, Link, Comment
-from pypress.extensions import db, mail, cache, photos
-from pypress.helpers import render_template
+from idetail import views, helpers
+from idetail.models import User, Post, Tag, Link, Comment
+from idetail.extensions import db, mail, cache, photos
+from idetail.helpers import render_template
 
-DEFAULT_APP_NAME = 'pypress'
+DEFAULT_APP_NAME = 'idetail'
 
-DEFAULT_MODULES = (
+DEFAULT_BLUEPRINT = (
     (views.frontend, ""),
     (views.post, "/post"),
     (views.comment, "/comment"),
@@ -40,7 +43,7 @@ DEFAULT_MODULES = (
 def create_app(config=None, modules=None):
 
     if modules is None:
-        modules = DEFAULT_MODULES   
+        modules = DEFAULT_BLUEPRINT   
     
     app = Flask(DEFAULT_APP_NAME)
     
@@ -223,8 +226,8 @@ def configure_errorhandlers(app):
 def configure_modules(app, modules):
     
     for module, url_prefix in modules:
-        app.register_module(module, url_prefix=url_prefix)
-
+        app.register_blueprint( module,url_prefix=url_prefix )
+        #break
 
 def configure_logging(app):
 
