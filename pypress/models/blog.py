@@ -18,13 +18,13 @@ from flask.ext.babel import gettext as _
 from flask.ext.sqlalchemy import BaseQuery
 from flask.ext.principal import RoleNeed, UserNeed, Permission
 
-from idetail import signals
-from idetail.helpers import storage, slugify, markdown
+from pypress import signals
+from pypress.helpers import storage, slugify, markdown
 
-from idetail.extensions import db
-from idetail.permissions import moderator, admin
+from pypress.extensions import db
+from pypress.permissions import moderator, admin
 
-from idetail.models.users import User
+from pypress.models.users import User
 
 class PostQuery(BaseQuery):
 

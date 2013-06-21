@@ -11,12 +11,12 @@ from flask import Blueprint, Response, request, flash, jsonify, g, current_app,\
 
 from flask.ext.babel import gettext as _
 
-from idetail.helpers import render_template, cached
-from idetail.permissions import auth, admin
-from idetail.extensions import db
+from pypress.helpers import render_template, cached
+from pypress.permissions import auth, admin
+from pypress.extensions import db
 
-from idetail.models import Link
-from idetail.forms import LinkForm
+from pypress.models import Link
+from pypress.forms import LinkForm
 
 link = Blueprint('link', __name__ )
 

@@ -13,9 +13,9 @@ from werkzeug.contrib.atom import AtomFeed
 
 from flask import Blueprint, request, url_for
 
-from idetail.helpers import cached
+from pypress.helpers import cached
 
-from idetail.models import User, Post, Tag
+from pypress.models import User, Post, Tag
 
 feeds = Blueprint('feeds', __name__ )
 
@@ -35,7 +35,7 @@ class PostFeed(AtomFeed):
 @feeds.route("/")
 @cached()
 def index():
-    feed = PostFeed("idetail - lastest",
+    feed = PostFeed("pypress - lastest",
                     feed_url=request.url,
                     url=request.url_root)
 
@@ -53,7 +53,7 @@ def tag(slug):
 
     tag = Tag.query.filter_by(slug=slug).first_or_404()
 
-    feed = PostFeed("idetail - %s"  % tag,
+    feed = PostFeed("pypress - %s"  % tag,
                     feed_url=request.url,
                     url=request.url_root)
 

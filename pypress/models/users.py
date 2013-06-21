@@ -17,10 +17,10 @@ from flask import abort, current_app
 from flask.ext.sqlalchemy import BaseQuery
 from flask.ext.principal import RoleNeed, UserNeed, Permission
 
-from idetail.extensions import db, cache
-from idetail.permissions import admin
+from pypress.extensions import db, cache
+from pypress.permissions import admin
 
-from idetail import twitter
+from pypress import twitter
 
 class UserQuery(BaseQuery):
 

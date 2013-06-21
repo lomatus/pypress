@@ -15,12 +15,12 @@ from flask import Blueprint, Response, request, flash, jsonify, g, current_app,\
 
 from flask.ext.babel import gettext as _
 
-from idetail.helpers import render_template, cached
-from idetail.permissions import auth, admin 
-from idetail.extensions import db, photos
+from pypress.helpers import render_template, cached
+from pypress.permissions import auth, admin 
+from pypress.extensions import db, photos
 
-from idetail.models import User, Post, Comment, Tag
-from idetail.forms import CommentForm, TemplateForm, TwitterForm
+from pypress.models import User, Post, Comment, Tag
+from pypress.forms import CommentForm, TemplateForm, TwitterForm
 
 frontend = Blueprint('frontend', __name__ )
 

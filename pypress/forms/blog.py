@@ -12,9 +12,9 @@ from flask.ext.wtf import Form, TextAreaField, SubmitField, TextField, \
 
 from flask.ext.babel import gettext, lazy_gettext as _ 
 
-from idetail.helpers import slugify
-from idetail.extensions import db
-from idetail.models import Post
+from pypress.helpers import slugify
+from pypress.extensions import db
+from pypress.models import Post
 
 class PostForm(Form):
 

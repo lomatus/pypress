@@ -11,11 +11,11 @@ from flask import Blueprint, Response, request, flash, jsonify, g, current_app,\
 
 from flask.ext.babel import gettext as _
 
-from idetail import signals
-from idetail.helpers import render_template, cached
-from idetail.permissions import auth 
-from idetail.extensions import db
-from idetail.models import Comment
+from pypress import signals
+from pypress.helpers import render_template, cached
+from pypress.permissions import auth 
+from pypress.extensions import db
+from pypress.models import Comment
 
 comment = Blueprint('comment', __name__ )
 

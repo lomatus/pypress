@@ -23,15 +23,15 @@ from flask import Blueprint, Response, request, flash, jsonify, g, current_app,\
 from flask.ext.babel import gettext as _
 from flask.ext.principal import identity_changed, Identity, AnonymousIdentity
 
-from idetail.helpers import render_template, cached
-from idetail.permissions import auth, admin 
-from idetail.extensions import db
+from pypress.helpers import render_template, cached
+from pypress.permissions import auth, admin 
+from pypress.extensions import db
 
-from idetail.models import User, UserCode, Twitter
-from idetail.forms import LoginForm, SignupForm
+from pypress.models import User, UserCode, Twitter
+from pypress.forms import LoginForm, SignupForm
 
-from idetail import twitter
-from idetail import weibo
+from pypress import twitter
+from pypress import weibo
 
 account = Blueprint('account', __name__ )
 

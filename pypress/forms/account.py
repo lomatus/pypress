@@ -13,8 +13,8 @@ from flask.ext.wtf import Form, TextAreaField, HiddenField, BooleanField, \
 
 from flask.ext.babel import gettext, lazy_gettext as _ 
 
-from idetail.extensions import db
-from idetail.models import User
+from pypress.extensions import db
+from pypress.models import User
 
 from .validators import is_username
 
