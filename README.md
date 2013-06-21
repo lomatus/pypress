@@ -3,6 +3,8 @@ A team blog based on [Flask](http://flask.pocoo.org/)
 
 This project is forked form [pypress](https://github.com/laoqiu/pypress) by laoqiu
 
+A very good sample for newbie of Flask which come from newsmeme
+
 Purpose of this fork is to make this project relive
 
 #Version road map
