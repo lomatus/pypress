@@ -14,17 +14,17 @@ from werkzeug import cached_property
 
 from flask import abort, current_app, url_for, Markup
 
-from flaskext.babel import gettext as _
-from flaskext.sqlalchemy import BaseQuery
-from flaskext.principal import RoleNeed, UserNeed, Permission
+from flask.ext.babel import gettext as _
+from flask.ext.sqlalchemy import BaseQuery
+from flask.ext.principal import RoleNeed, UserNeed, Permission
 
-from pypress import signals
-from pypress.helpers import storage, slugify, markdown
+from idetail import signals
+from idetail.helpers import storage, slugify, markdown
 
-from pypress.extensions import db
-from pypress.permissions import moderator, admin
+from idetail.extensions import db
+from idetail.permissions import moderator, admin
 
-from pypress.models.users import User
+from idetail.models.users import User
 
 class PostQuery(BaseQuery):
 

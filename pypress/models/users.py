@@ -14,13 +14,13 @@ from werkzeug import cached_property
 
 from flask import abort, current_app
 
-from flaskext.sqlalchemy import BaseQuery
-from flaskext.principal import RoleNeed, UserNeed, Permission
+from flask.ext.sqlalchemy import BaseQuery
+from flask.ext.principal import RoleNeed, UserNeed, Permission
 
-from pypress.extensions import db, cache
-from pypress.permissions import admin
+from idetail.extensions import db, cache
+from idetail.permissions import admin
 
-from pypress import twitter
+from idetail import twitter
 
 class UserQuery(BaseQuery):
 
@@ -35,7 +35,10 @@ class UserQuery(BaseQuery):
         """
 
         try:
-            user = self.get(int(identity.name))
+            if identity.id != None:
+                user = self.get(int(identity.id))
+            else:
+                user = None
         except ValueError:
             user = None
 

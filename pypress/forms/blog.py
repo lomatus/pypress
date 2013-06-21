@@ -7,14 +7,14 @@
 
     :license: BSD, see LICENSE for more details.
 """
-from flaskext.wtf import Form, TextAreaField, SubmitField, TextField, \
+from flask.ext.wtf import Form, TextAreaField, SubmitField, TextField, \
         ValidationError, required, email, url, optional
 
-from flaskext.babel import gettext, lazy_gettext as _ 
+from flask.ext.babel import gettext, lazy_gettext as _ 
 
-from pypress.helpers import slugify
-from pypress.extensions import db
-from pypress.models import Post
+from idetail.helpers import slugify
+from idetail.extensions import db
+from idetail.models import Post
 
 class PostForm(Form):
 
